@@ -1,0 +1,258 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+    
+        <meta charset="utf-8">
+
+        <title>Yahoo Hackathon Alert Management</title>
+        <!--        view attributes-->
+        <meta name="description" content="Alert Management System">
+        <meta name="author" content="red-phoneix">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+        <!--        stylesheets-->
+        <link rel="stylesheet" href="resources/css/common.css">
+<!--        <link rel="stylesheet" href="css/home.css">-->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+        <!--        JQuery CDN-->
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    </head>
+    
+    
+    <body>
+        
+        <header id="yhcontent">
+                <div class="pull-left col-md-3"><img src="resources/img/yahoo.png"/></div>
+                <h1 class="pull-left txtCenter col-md-8">Manage Alert for Yahoo Infrastructure</h1>
+                <div class="clearfix"></div>
+        </header>
+        
+        <section id="selector-wrapper">
+                <div class="pull-left col-md-2 txtCenter property-selector-wrapper">
+<!--
+                    <select class="form-control">
+                        <option value="media">Media</option>
+                        <option value="search">Search</option>
+                    </select>
+                    
+-->
+                    <div class="dropdown">
+                        <label class="txtLabelLight">Property</label>
+                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                        All
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">media</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">search</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">api</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">feeds</a></li>
+                      </ul>
+                    </div>
+                </div>
+                <div class="pull-left col-md-2 txtCenter node-selector-wrapper">
+<!--
+                    <select class="form-control">
+                        <option value="node1">node1</option>
+                    </select>
+-->
+                    <div class="dropdown">
+                        <label class="txtLabelLight">Node</label>
+                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                        All
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">node1</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">node2</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">node3</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">node4</a></li>
+                      </ul>
+                    </div>
+                </div>
+                <a class=" pull-left btn btn-primary" role="button">Fetch</a>
+                <a class=" pull-left btn btn-default col-md-offset-1" role="button">Track</a>
+            
+            <div class="search-section-wrapper col-md-4 pull-right">
+                <div class="search-control pull-left">
+                    <input type="text" class="form-control" placeholder="search">
+                </div>
+                <a class="pull-left btn btn-primary">Search</a>
+                <div class="clearfix"></div>
+            </div>
+                <div class="clearfix"></div>
+            </section>
+        
+        <section class="tracking-wrapper">
+            <div class="col-md-6 tracking-items center">
+                <div class="col-md-4 pull-left">
+                    <input type="text" class="pull-left text form-control" placeholder="Email ID">
+                </div>
+                <div class="col-md-4 pull-left">
+                    <input type="text" class="pull-left text form-control col-md-offset-1" placeholder="Phone Number">
+                </div>
+                <button class="pull-right btn btn-default btn-small _track">Start Tracking</button>    
+                <div class="clearfix"></div>
+            </div>
+        </section>
+        <div class="container">
+            
+            <div class="clearfix"></div>
+            <section id="representation-wrapper">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Severity</th>
+                            <th>First Occurence</th>
+                            <th>Property</th>
+                            <th>Node</th>
+                            <th>Summary</th>
+                            <th>Resolution</th>
+<!--                            <th>Action</th>-->
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr class="danger">
+                            <td>1</td>
+                            <td>6</td>
+                            <td>time</td>
+                            <td>media</td>
+                            <td>node1</td>
+                            <td>Apache Stopped</td>
+                            <td>Handeling at chef</td>
+<!--
+                            <td>
+                                <div class="action-wrapper input-group">
+                                    <label>tagged</label>
+                                    <input type="checkbox" value=""/>
+                                    <input type="button" class="btn btn-success" value="Tag"></button>
+                                </div>
+                            </td>
+-->
+                        </tr>
+                        
+                        <tr class="warning">
+                            <td>2</td>
+                            <td>4</td>
+                            <td>time</td>
+                            <td>search</td>
+                            <td>node3</td>
+                            <td>node brake down</td>
+                            <td>Handeling Database</td>
+<!--
+                            <td>
+                                <div class="action-wrapper input-group">
+                                    <label>tagged</label>
+                                    <input type="checkbox" value=""/>
+                                    <input type="button" class="btn btn-success" value="Tag"></button>
+                                </div>
+                            </td>
+-->
+                        </tr>
+                        
+                        <tr class="info">
+                            <td>3</td>
+                            <td>1</td>
+                            <td>time</td>
+                            <td>feed</td>
+                            <td>node7</td>
+                            <td>Web request timed out</td>
+                            <td>New services setup</td>
+<!--
+                            <td>
+                                <div class="action-wrapper input-group">
+                                    <label>tagged</label>
+                                    <input type="checkbox" value=""/>
+                                    <input type="button" class="btn btn-success" value="Tag"></button>
+                                </div>
+                            </td>
+-->
+                        </tr>
+                        <tr class="danger">
+                            <td>4</td>
+                            <td>6</td>
+                            <td>time</td>
+                            <td>media</td>
+                            <td>node1</td>
+                            <td>Apache Stopped</td>
+                            <td>Handeling at chef</td>
+<!--
+                            <td>
+                                <div class="action-wrapper input-group">
+                                    <label>tagged</label>
+                                    <input type="checkbox" value=""/>
+                                    <input type="button" class="btn btn-success" value="Tag"></button>
+                                </div>
+                            </td>
+-->
+                        </tr>
+                        
+                        <tr class="warning">
+                            <td>5</td>
+                            <td>4</td>
+                            <td>time</td>
+                            <td>search</td>
+                            <td>node3</td>
+                            <td>node brake down</td>
+                            <td>Handeling Database</td>
+<!--
+                            <td>
+                                <div class="action-wrapper input-group">
+                                    <label>tagged</label>
+                                    <input type="checkbox" value=""/>
+                                    <input type="button" class="btn btn-success" value="Tag"></button>
+                                </div>
+                            </td>
+-->
+                        </tr>
+                        
+                        <tr class="info">
+                            <td>6</td>
+                            <td>1</td>
+                            <td>time</td>
+                            <td>feed</td>
+                            <td>node7</td>
+                            <td>Web request timed out</td>
+                            <td>New services setup</td>
+<!--
+                            <td>
+                                <div class="action-wrapper input-group">
+                                    <label>tagged</label>
+                                    <input type="checkbox" value=""/>
+                                    <input type="button" class="btn btn-success" value="Tag"></button>
+                                </div>
+                            </td>
+-->
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+<!--
+        <script>
+            $(document).ready(function(){
+            handlers();
+            });
+            
+            function handlers(){
+                $('._track').unbind('click').bind('click',function(){
+                $('section.tracking-wrapper').show();
+            });
+            }
+            
+        </script>
+-->
+    </body>
+</html>
